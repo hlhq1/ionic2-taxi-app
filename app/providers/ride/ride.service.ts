@@ -4,7 +4,7 @@
  * @license   GPL-3.0
  */
 
-import * as uuid from 'node-uuid';
+// import * as uuid from 'node-uuid';
 import { Injectable } from '@angular/core';
 import { Events } from 'ionic-angular';
 import { RideModel } from './ride.model';
@@ -17,6 +17,7 @@ export class RideService {
   }
 
   addRide(departure: string, destination: string): void {
+    let uuid = require('node-uuid');
     const model = new RideModel(uuid.v4(), departure, destination);
     this._rides.push(model);
   }
